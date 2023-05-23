@@ -14,42 +14,35 @@
 </head>
 
 <body onload="init()">
-  <nav class="navbar bg-body-tertiary bg-white">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">QuizApp</span>
-    </div>
-  </nav>
-
-  <div class="container">
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressbar"></div>
+  </div>
+  <div class="container" id="container">
     <div class="card quiz-card dflexrow" id="quizCard">
       <div class="leftSection dflexcolumn">
         <img src="./img/logo.png" class="" alt="">
       </div>
       <div class="rightSection">
         <div class="card-body">
-          <h5 class="card-title" id="questionText">Frage</h5>
+          <h5 class="card-title" id="questionText"></h5>
           <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_1')">
-            <div class="answerLetter" id="answerLetter_1">A</div>
+            <div class="answerLetter" id="letter_answer_1">A</div>
             <div class="card-body" id="answer_1">
-              Antwort
             </div>
           </div>
           <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_2')">
-            <div class="answerLetter" id="answerLetter_2">B</div>
+            <div class="answerLetter" id="letter_answer_2">B</div>
             <div class="card-body" id="answer_2">
-              Antwort
             </div>
           </div>
           <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_3')">
-            <div class="answerLetter" id="answerLetter_3">C</div>
+            <div class="answerLetter" id="letter_answer_3">C</div>
             <div class="card-body" id="answer_3">
-              Antwort
             </div>
           </div>
           <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_4')">
-            <div class="answerLetter" id="answerLetter_4">D</div>
+            <div class="answerLetter" id="letter_answer_4">D</div>
             <div class="card-body" id="answer_4">
-              Antwort
             </div>
           </div>
           <div class="question-footer">

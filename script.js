@@ -8,7 +8,11 @@ function init() {
 
 function showQuestion() {
     let question = questions[currentQuestion];
-    document.getElementById('currentQuestion').innerHTML = currentQuestion + 1;
+    let progressbar = document.getElementById('progressbar');
+    let currentPercentage = 100 / questions.length * currentQuestion;
+    progressbar.ariaValueNow = currentPercentage;
+    progressbar.style = `width: ${currentPercentage}%`;
+    document.getElementById('currentQuestion').innerHTML = currentQuestion+1;
     document.getElementById('nextQuestionBtn').disabled = true;
     document.getElementById('questionText').innerHTML = question['question'];
     document.getElementById('answer_1').innerHTML = question['answer_1'];
@@ -23,11 +27,14 @@ function answer(selectedAnswer) {
     let idOfRightAnswer = `answer_${question['right_answer']}`;
 
     if (question['right_answer'] == selectedQuestionNumber) {
-        document.getElementById(selectedAnswer).parentNode.classList.add('bg-success');
+        document.getElementById(selectedAnswer).parentNode.classList.add('correctanswer');
+        document.getElementById('letter_'+selectedAnswer).classList.add('correctanswer-letter');
         rightAnswerCount++;
     } else if (question['right_answer'] != selectedQuestionNumber) {
-        document.getElementById(selectedAnswer).parentNode.classList.add('bg-danger');
-        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        document.getElementById(selectedAnswer).parentNode.classList.add('wronganswer');
+        document.getElementById('letter_'+selectedAnswer).classList.add('wronganswer-letter');
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('correctanswer');
+        document.getElementById('letter_'+idOfRightAnswer).classList.add('correctanswer-letter');
     }
     document.getElementById('nextQuestionBtn').disabled = false;
 }
@@ -43,8 +50,10 @@ function nextQuestion() {
             </div>
             <h2>Herzlichen Glückwunsch!</h2><br>
             <h3>Du hast ${rightAnswerCount} Fragen von ${questions.length} Fragen richtig beantwortet!</h3>
+            <button class="btn buttonbg" onclick="location.reload()">nochmal spielen!</button>
         </div>
         `;
+        document.getElementById('progressbar').style = 'width: 100%';
     } else {
         currentQuestion++;
         showQuestion();
@@ -53,12 +62,10 @@ function nextQuestion() {
 }
 
 function removeClass() {
-    document.getElementById('answer_1').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer_1').parentNode.classList.remove('bg-success');
-    document.getElementById('answer_2').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer_2').parentNode.classList.remove('bg-success');
-    document.getElementById('answer_3').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer_3').parentNode.classList.remove('bg-success');
-    document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer_4').parentNode.classList.remove('bg-success');
+    for (let i = 1; i < 5; i++) {
+        document.getElementById(`answer_${i}`).parentNode.classList.remove('wronganswer');
+        document.getElementById(`answer_${i}`).parentNode.classList.remove('correctanswer');
+        document.getElementById(`letter_answer_${i}`).classList.remove('wronganswer-letter');
+        document.getElementById(`letter_answer_${i}`).classList.remove('correctanswer-letter');
+    }
 }

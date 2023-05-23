@@ -32,20 +32,20 @@ let questions = [
     "right_answer": 4
 },
 {
-    "question": "Wer hat HTML erfunden",
-    "answer_1": "Robbie Williams",
-    "answer_2": "Lady Gaga",
-    "answer_3": "Tim Berners-Lee",
-    "answer_4": "Justin Bieber",
+    "question": "Welche Technik kommt zum stylen einer Webseite zum Einsatz?",
+    "answer_1": "HTML",
+    "answer_2": "PHP",
+    "answer_3": "CSS",
+    "answer_4": "HTTP",
     "right_answer": 3
 },
 {
-    "question": "Wer hat HTML erfunden",
-    "answer_1": "Robbie Williams",
-    "answer_2": "Lady Gaga",
-    "answer_3": "Tim Berners-Lee",
-    "answer_4": "Justin Bieber",
-    "right_answer": 3
+    "question": "Wie wählt man eine Klasse in CSS aus?",
+    "answer_1": "class {...}",
+    "answer_2": ".class {...}",
+    "answer_3": "#class {...}",
+    "answer_4": "!class {...}",
+    "right_answer": 2
 },
 {
     "question": "Wer hat HTML erfunden",

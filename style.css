@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100dvh;
+    min-height: calc(100dvh - 16px);
 }
 
 .dflexrow {
@@ -21,21 +21,35 @@ body {
     flex-direction: column;
 }
 
+.progress {
+    background-color: lightgray !important;
+    border-radius: 0 !important;
+}
+
+.progress-bar {
+    background-color: rgba(39, 53, 92, 1) !important;
+    border-radius: 0 8px 8px 0;
+}
+
 .quiz-card {
-    width: 600px;
+    width: 800px;
+    border-radius: 12px !important;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .leftSection {
     align-items: center;
     background-color: rgba(39, 53, 92, 1);
     padding: 16px;
-    width: 160px;
-    border-radius: 4px 0 0 4px;
+    width: 200px;
+    border-radius: 12px 0 0 12px;
 }
 
 .rightSection {
     padding: 16px;
-    width: calc(440px - 16px);
+    width: 600px;
+    background-color: rgb(247, 247, 247);
 }
 
 .question-footer {
@@ -58,6 +72,14 @@ body {
 
 .circlebutton:disabled {
     background-color: #dadff5 !important;
+}
+
+.buttonbg {
+    background-color: #bac5f3 !important;
+}
+
+.buttonbg:hover, .circlebutton:hover {
+    background-color: #abbaf7 !important;
 }
 
 .card-body {
@@ -88,6 +110,24 @@ body {
     color: white;
 }
 
+.correctanswer {
+    background-color: rgb(183, 247, 153);
+}
+
+.correctanswer-letter {
+    background-color: rgb(79, 189, 27);
+    color: white;
+}
+
+.wronganswer {
+    background-color: rgb(255, 163, 164);
+}
+
+.wronganswer-letter {
+    background-color: rgb(249, 23, 23);
+    color: white;
+}
+
 .finalScreen {
     display: flex;
     flex-direction: column;
@@ -95,8 +135,12 @@ body {
     align-items: center;
     text-align: center;
     padding: 16px;
+    width: inherit;
 }
 
+.finalScreen button {
+    margin-top: 24px;
+}
 .imgMirrorY {
     -moz-transform: scaleX(-1);
 	-o-transform: scaleX(-1);
@@ -110,4 +154,10 @@ body {
     margin-bottom: 24px;
     display: flex;
     justify-content: center;
+    width: 320px;
+}
+
+.trophy img {
+    width: 160px;
+    height: 320px;
 }
