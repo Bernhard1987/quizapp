@@ -1,6 +1,6 @@
 let questions = [
 {
-    "question": "Wer hat HTML erfunden",
+    "question": "Wer hat HTML erfunden?",
     "answer_1": "Robbie Williams",
     "answer_2": "Lady Gaga",
     "answer_3": "Tim Berners-Lee",
@@ -24,12 +24,12 @@ let questions = [
     "right_answer": 2
 },
 {
-    "question": "Wer hat HTML erfunden",
-    "answer_1": "Robbie Williams",
-    "answer_2": "Lady Gaga",
-    "answer_3": "Tim Berners-Lee",
-    "answer_4": "Justin Bieber",
-    "right_answer": 3
+    "question": "Was ist Bootstrap?",
+    "answer_1": "Eine Programmiersprache",
+    "answer_2": "Datenbank",
+    "answer_3": "Betriebssystemauswahl",
+    "answer_4": "Ein Framework zur Gestaltung von Webseiten",
+    "right_answer": 4
 },
 {
     "question": "Wer hat HTML erfunden",

@@ -8,47 +8,56 @@
   <title>QuizApp</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts.css">
   <script src="script.js"></script>
   <script src="questions.js"></script>
 </head>
 
-<body>
-  <nav class="navbar bg-body-tertiary">
+<body onload="init()">
+  <nav class="navbar bg-body-tertiary bg-white">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1">QuizApp</span>
     </div>
   </nav>
 
   <div class="container">
-    <div class="card quiz-card">
-      <img src="./img/logo.png" class="card-img-top" alt="">
-      <div class="card-body">
-        <h5 class="card-title">Frage</h5>
-        <div class="card mb-2">
-          <div class="card-body">
-            Antwort 
+    <div class="card quiz-card dflexrow" id="quizCard">
+      <div class="leftSection dflexcolumn">
+        <img src="./img/logo.png" class="" alt="">
+      </div>
+      <div class="rightSection">
+        <div class="card-body">
+          <h5 class="card-title" id="questionText">Frage</h5>
+          <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_1')">
+            <div class="answerLetter" id="answerLetter_1">A</div>
+            <div class="card-body" id="answer_1">
+              Antwort
+            </div>
           </div>
-        </div>
-        <div class="card mb-2">
-          <div class="card-body">
-            Antwort 
+          <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_2')">
+            <div class="answerLetter" id="answerLetter_2">B</div>
+            <div class="card-body" id="answer_2">
+              Antwort
+            </div>
           </div>
-        </div>
-        <div class="card mb-2">
-          <div class="card-body">
-            Antwort 
+          <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_3')">
+            <div class="answerLetter" id="answerLetter_3">C</div>
+            <div class="card-body" id="answer_3">
+              Antwort
+            </div>
           </div>
-        </div>
-        <div class="card mb-2">
-          <div class="card-body">
-            Antwort 
+          <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_4')">
+            <div class="answerLetter" id="answerLetter_4">D</div>
+            <div class="card-body" id="answer_4">
+              Antwort
+            </div>
           </div>
-        </div>
-        <div class="question-footer">
-          <div>
-            <b>1</b> von <b>5</b> Fragen
+          <div class="question-footer">
+            <div>
+              <b id="currentQuestion">1</b> von <b id="totalQuestionCount">5</b> Fragen
+            </div>
+            <button class="btn circlebutton" id="nextQuestionBtn" onclick="nextQuestion()">&gt;</button>
           </div>
-          <button class="btn btn-primary">Nächste Frage</button>
         </div>
       </div>
     </div>
