@@ -40,7 +40,7 @@ let questions = [
     "right_answer": 3
 },
 {
-    "question": "Wie wählt man eine Klasse in CSS aus?",
+    "question": "Wie selektiert man eine Klasse in CSS?",
     "answer_1": "class {...}",
     "answer_2": ".class {...}",
     "answer_3": "#class {...}",
@@ -48,11 +48,11 @@ let questions = [
     "right_answer": 2
 },
 {
-    "question": "Wer hat HTML erfunden",
-    "answer_1": "Robbie Williams",
-    "answer_2": "Lady Gaga",
-    "answer_3": "Tim Berners-Lee",
-    "answer_4": "Justin Bieber",
+    "question": "Wie legt man in CSS die Schriftgröße fest?",
+    "answer_1": "size: 16px;",
+    "answer_2": "font: 16px;",
+    "answer_3": "font-size: 16px;",
+    "answer_4": "16px: font-size;",
     "right_answer": 3
 },
 ];

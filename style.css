@@ -29,6 +29,9 @@ body {
 .progress-bar {
     background-color: rgba(39, 53, 92, 1) !important;
     border-radius: 0 8px 8px 0;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 10px;
 }
 
 .quiz-card {
@@ -44,6 +47,25 @@ body {
     padding: 16px;
     width: 200px;
     border-radius: 12px 0 0 12px;
+    z-index: 2;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.15);
+}
+
+.quizcontent {
+    color: white;
+    width: inherit;
+    margin-top: 40px;
+    font-size: 24px;
+    
+}
+
+.quizcontent ul {
+    padding-left: 24px;
+    list-style-type: "|   ";
+}
+
+.quizcontent li {
+    margin-bottom: 16px;
 }
 
 .rightSection {

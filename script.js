@@ -12,6 +12,7 @@ function showQuestion() {
     let currentPercentage = 100 / questions.length * currentQuestion;
     progressbar.ariaValueNow = currentPercentage;
     progressbar.style = `width: ${currentPercentage}%`;
+    progressbar.innerHTML = `${currentPercentage.toFixed(0)}%`;
     document.getElementById('currentQuestion').innerHTML = currentQuestion+1;
     document.getElementById('nextQuestionBtn').disabled = true;
     document.getElementById('questionText').innerHTML = question['question'];
@@ -54,6 +55,7 @@ function nextQuestion() {
         </div>
         `;
         document.getElementById('progressbar').style = 'width: 100%';
+        document.getElementById('progressbar').innerHTML = '100%';
     } else {
         currentQuestion++;
         showQuestion();
