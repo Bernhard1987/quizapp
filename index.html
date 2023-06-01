@@ -13,9 +13,10 @@
   <script src="questions.js"></script>
 </head>
 
-<body onload="init()">
+<body onload="showStartScreenHTML()">
   <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressbar">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+      id="progressbar">
     </div>
   </div>
   <div class="container" id="container">
@@ -30,36 +31,7 @@
           </ul>
         </div>
       </div>
-      <div class="rightSection">
-        <div class="card-body">
-          <h5 class="card-title" id="questionText"></h5>
-          <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_1')">
-            <div class="answerLetter" id="letter_answer_1">A</div>
-            <div class="card-body" id="answer_1">
-            </div>
-          </div>
-          <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_2')">
-            <div class="answerLetter" id="letter_answer_2">B</div>
-            <div class="card-body" id="answer_2">
-            </div>
-          </div>
-          <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_3')">
-            <div class="answerLetter" id="letter_answer_3">C</div>
-            <div class="card-body" id="answer_3">
-            </div>
-          </div>
-          <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_4')">
-            <div class="answerLetter" id="letter_answer_4">D</div>
-            <div class="card-body" id="answer_4">
-            </div>
-          </div>
-          <div class="question-footer">
-            <div>
-              <b id="currentQuestion">1</b> von <b id="totalQuestionCount">5</b> Fragen
-            </div>
-            <button class="btn circlebutton" id="nextQuestionBtn" onclick="nextQuestion()">&gt;</button>
-          </div>
-        </div>
+      <div class="rightSection" id="rightSection">
       </div>
     </div>
   </div>
