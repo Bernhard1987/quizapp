@@ -21,12 +21,8 @@ body {
     flex-direction: column;
 }
 
-.z0 {
-    z-index: 0;
-}
-
-.z1 {
-    z-index: 1;
+.dnone {
+    display: none;
 }
 
 .progress {
@@ -68,8 +64,8 @@ body {
 }
 
 .quizcontent ul {
-    padding-left: 24px;
-    list-style-type: "|   ";
+    padding-left: 40px;
+    list-style-type: "|      ";
 }
 
 .quizcontent li {
@@ -229,26 +225,35 @@ body {
 }
 
 .finalScreen button {
-    margin-top: 24px;
+    width: 180px;
+    margin-bottom: 4px;
 }
 
-.imgMirrorY {
-    -moz-transform: scaleX(-1);
-	-o-transform: scaleX(-1);
-	-webkit-transform: scaleX(-1);
-	transform: scaleX(-1);
-	-ms-filter: "FlipH";
-	filter: FlipH;
+.finalScreen h2 {
+    font-weight: 700;
+    width: 180px;
+    margin-bottom: 0;
+}
+
+.finalScreen h3 {
+    display: flex;
+    font-weight: 700;
+    color:rgb(241, 134, 47);
+    margin: 24px;
+}
+
+.finalScreen h3 div {
+    padding-left: 24px;
+    color: black;
+}
+
+.finalScreen img {
+    margin-bottom: 24px;
 }
 
 .trophy {
-    margin-bottom: 24px;
-    display: flex;
-    justify-content: center;
-    width: 320px;
-}
-
-.trophy img {
-    width: 160px;
-    height: 320px;
+position: absolute;
+top: 50%;
+right: 0;
+transform: translate(0, -50%);
 }

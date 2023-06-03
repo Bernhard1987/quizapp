@@ -85,6 +85,7 @@ function showStartScreenHTML() {
           </div>
         </div>
     `;
+    document.getElementById('trophy').classList.add('dnone');
 }
 
 function showQuestionHTML() {
@@ -123,18 +124,17 @@ function showQuestionHTML() {
 }
 
 function showEndscreen() {
-    document.getElementById('quizCard').innerHTML = '';
-    document.getElementById('quizCard').innerHTML += `
+    document.getElementById('rightSection').innerHTML = '';
+    document.getElementById('rightSection').innerHTML += `
     <div class="finalScreen">
-        <div class="trophy">
-            <img src="./img/tropy.png">
-            <img src="./img/tropy.png" class="imgMirrorY">
-        </div>
-        <h2>Herzlichen Glückwunsch!</h2><br>
-        <h3>Du hast ${rightAnswerCount} Fragen von ${questions.length} Fragen richtig beantwortet!</h3>
-        <button class="btn buttonbg" onclick="location.reload()">nochmal spielen!</button>
+        <img src="./img/brain_result.png">
+        <h2>HTML QUIZ FERTIG!</h2>
+        <h3>DEINE PUNKTZAHL <div class="finalScore">${rightAnswerCount}/${questions.length}</div></h3>
+        <button class="btn bg-primary text-white">TEILEN</button>
+        <button class="btn text-primary" onclick="location.reload()">NOCHMAL SPIELEN</button>
     </div>
     `;
+    document.getElementById('trophy').classList.remove('dnone');
     document.getElementById('progressbar').style = 'width: 100%';
     document.getElementById('progressbar').innerHTML = '100%';
 }
