@@ -20,13 +20,12 @@ function updateProgressbar() {
 }
 
 function updateQuestion(question) {
-    document.getElementById('currentQuestion').innerHTML = currentQuestion+1;
+    document.getElementById('currentQuestion').innerHTML = currentQuestion + 1;
     document.getElementById('nextQuestionBtn').disabled = true;
     document.getElementById('questionText').innerHTML = question['question'];
-    document.getElementById('answer_1').innerHTML = question['answer_1'];
-    document.getElementById('answer_2').innerHTML = question['answer_2'];
-    document.getElementById('answer_3').innerHTML = question['answer_3'];
-    document.getElementById('answer_4').innerHTML = question['answer_4'];
+    for (let i = 1; i < 5; i++) {
+        document.getElementById(`answer_${i}`).innerHTML = question[`answer_${i}`];
+    }
 }
 
 function answer(selectedAnswer) {
@@ -39,6 +38,7 @@ function answer(selectedAnswer) {
         wrongAnswerAction(selectedAnswer, idOfRightAnswer);
     }
     document.getElementById('nextQuestionBtn').disabled = false;
+    disableAnswers();
 }
 
 function rightAnswerSelected(question, selectedQuestionNumber) {
@@ -47,16 +47,16 @@ function rightAnswerSelected(question, selectedQuestionNumber) {
 
 function correctAnswerAction(selectedAnswer) {
     document.getElementById(selectedAnswer).parentNode.classList.add('correctanswer');
-    document.getElementById('letter_'+selectedAnswer).classList.add('correctanswer-letter');
+    document.getElementById(`letter_${selectedAnswer}`).classList.add('correctanswer-letter');
     AUDIO_SUCCESS.play();
     rightAnswerCount++;
 }
 
 function wrongAnswerAction(selectedAnswer, idOfRightAnswer) {
     document.getElementById(selectedAnswer).parentNode.classList.add('wronganswer');
-    document.getElementById('letter_'+selectedAnswer).classList.add('wronganswer-letter');
+    document.getElementById(`letter_${selectedAnswer}`).classList.add('wronganswer-letter');
     document.getElementById(idOfRightAnswer).parentNode.classList.add('correctanswer');
-    document.getElementById('letter_'+idOfRightAnswer).classList.add('correctanswer-letter');
+    document.getElementById(`letter_${idOfRightAnswer}`).classList.add('correctanswer-letter');
     AUDIO_FAIL.play();
 }
 
@@ -69,7 +69,7 @@ function nextQuestion() {
 }
 
 function questionNumberEqualsLength() {
-    return currentQuestion+1 == questions.length;
+    return currentQuestion + 1 == questions.length;
 }
 
 function showStartScreenHTML() {
@@ -93,7 +93,7 @@ function showQuestionHTML() {
     document.getElementById('rightSection').innerHTML += `
     <div class="card-body">
     <h5 class="card-title" id="questionText"></h5>
-    <div class="card mb-2 quiz-answer-card dflexrow" onclick="answer('answer_1')">
+    <div class="card mb-2 quiz-answer-card dflexrow " onclick="answer('answer_1')">
       <div class="answerLetter" id="letter_answer_1">A</div>
       <div class="card-body" id="answer_1">
       </div>
@@ -131,7 +131,7 @@ function showEndscreen() {
         <h2>HTML QUIZ FERTIG!</h2>
         <h3>DEINE PUNKTZAHL <div class="finalScore">${rightAnswerCount}/${questions.length}</div></h3>
         <button class="btn bg-primary text-white">TEILEN</button>
-        <button class="btn text-primary" onclick="location.reload()">NOCHMAL SPIELEN</button>
+        <button class="btn text-primary" onclick="resetQuiz()">NOCHMAL SPIELEN</button>
     </div>
     `;
     document.getElementById('trophy').classList.remove('dnone');
@@ -142,14 +142,27 @@ function showEndscreen() {
 function showNextQuestion() {
     currentQuestion++;
     showQuestion();
-    removeClass();
+    resetAnswerStyle();
 }
 
-function removeClass() {
+function resetAnswerStyle() {
     for (let i = 1; i < 5; i++) {
         document.getElementById(`answer_${i}`).parentNode.classList.remove('wronganswer');
         document.getElementById(`answer_${i}`).parentNode.classList.remove('correctanswer');
         document.getElementById(`letter_answer_${i}`).classList.remove('wronganswer-letter');
         document.getElementById(`letter_answer_${i}`).classList.remove('correctanswer-letter');
     }
+}
+
+function disableAnswers() {
+    for (let i = 1; i < 5; i++) {
+        document.getElementById(`answer_${i}`).parentNode.onclick = "";
+    }
+}
+
+function resetQuiz() {
+    currentQuestion = 0;
+    rightAnswerCount = 0;
+    updateProgressbar();
+    showStartScreenHTML();
 }

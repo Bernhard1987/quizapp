@@ -9,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: calc(100dvh - 16px);
+    overflow-x: hidden;
 }
 
 .dflexrow {
@@ -256,4 +257,43 @@ position: absolute;
 top: 50%;
 right: 0;
 transform: translate(0, -50%);
+}
+
+@media(max-width: 991px) {
+    .rightSection {
+        width: 100%;
+    }
+
+    .trophy {
+        height: 220px;
+    }
+}
+
+@media(max-width: 767px) {
+    .trophy {
+        height: 180px;
+    }
+}
+
+@media (max-width: 575px) {
+    .leftSection {
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .quizcontent {
+        display: none;
+    }
+
+    .quiz-card {
+        flex-direction: column !important;
+    }
+    
+    .startScreenBottom {
+        justify-content: center;
+    }
+
+    .trophy {
+        height: 120px;
+    }
 }
