@@ -73,7 +73,6 @@ function questionNumberEqualsLength() {
 }
 
 function showStartScreenHTML() {
-    document.getElementById('rightSection').innerHTML = '';
     document.getElementById('rightSection').innerHTML = `
     <div class="startScreen">
           <div class="startScreenContent">
@@ -89,8 +88,7 @@ function showStartScreenHTML() {
 }
 
 function showQuestionHTML() {
-    document.getElementById('rightSection').innerHTML = '';
-    document.getElementById('rightSection').innerHTML += `
+    document.getElementById('rightSection').innerHTML = `
     <div class="card-body">
     <h5 class="card-title" id="questionText"></h5>
     <div class="card mb-2 quiz-answer-card dflexrow " onclick="answer('answer_1')">
@@ -124,8 +122,7 @@ function showQuestionHTML() {
 }
 
 function showEndscreen() {
-    document.getElementById('rightSection').innerHTML = '';
-    document.getElementById('rightSection').innerHTML += `
+    document.getElementById('rightSection').innerHTML = `
     <div class="finalScreen">
         <img src="./img/brain_result.png">
         <h2>HTML QUIZ FERTIG!</h2>
